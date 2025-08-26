@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAR CARD</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<main>
+    <h1>CAR REGISTRATION CARD</h1>
+    <a href="/add" class="action-link">Add New Car</a>
+
+    <div class="catalog" th:if="${cars != null}">
+        <h1>Car Catalog</h1>
+        <div th:each="car : ${cars}" class="catalog-item">
+            <h2 th:text="${car.make + ' ' + car.model}">Car Name</h2>
+            <p><strong>Year:</strong> <span th:text="${car.year}">Year</span></p>
+            <p><strong>Color:</strong> <span th:text="${car.color}">Color</span></p>
+            <p><strong>Body Type:</strong> <span th:text="${car.bodyType}">Body Type</span></p>
+            <p><strong>Engine Type:</strong> <span th:text="${car.engineType}">Engine Type</span></p>
+            <p><strong>Transmission:</strong> <span th:text="${car.transmission}">Transmission</span></p>
+            <div class="action-buttons">
+                <a th:href="@{|/edit?id=${car.carId}|}" class="edit-btn">Edit</a>
+                <a th:href="@{|/delete?id=${car.carId}|}" class="delete-btn">Delete</a>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

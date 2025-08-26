@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Car</title>
+</head>
+<body>
+<h1>Edit Car</h1>
+<form th:action="@{/edit}" th:object="${car}" method="post">
+    <input type="hidden" th:field="*{carId}"/>
+    <label>License Plate Number: <input type="text" th:field="*{licensePlateNumber}"/></label><br>
+    <label>Make: <input type="text" th:field="*{make}"/></label><br>
+    <label>Model: <input type="text" th:field="*{model}"/></label><br>
+    <label>Year: <input type="number" th:field="*{year}"/></label><br>
+    <label>Color: <input type="text" th:field="*{color}"/></label><br>
+    <label>Body Type: <input type="text" th:field="*{bodyType}"/></label><br>
+    <label>Engine Type: <input type="text" th:field="*{engineType}"/></label><br>
+    <label>Transmission: <input type="text" th:field="*{transmission}"/></label><br>
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
