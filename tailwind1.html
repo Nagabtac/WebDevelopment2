@@ -1,72 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Tail wind CSS Intro</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TailwindCss Intro</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body class="bg-gray-500">
-    <!-- <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">Click me</button>
-    <h1 class="text-yellow-500 ml-5 font-bold">Hello, Tailwind CSS!</h1> -->
+<body class="bg-gray-50 text-gray-800">
 
-    <header>
-        <nav class="px-4 py-3 bg-white shadow-md flex item-center justify-between">
-            <div class="flex items-center justify-center gap-3">
-                <div class="w-10 h-10 rounded-md bg-blue-500 text-white flex items-center justify-center font-semibold">D</div>
-                <div class="text-lg font-medium">Darwin Blerp</div>
-            </div>
-            <div class="space-x-4">
-                <a href="" class="hover:text-blue-500 text-md">Home</a> <!-- medium/md is default size -->
-                <a href="" class="hover:text-blue-500">Components</a>
-                <a href="" class="hover:text-blue-500">Practice</a>
-            </div>
-        </nav>
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-sm">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-md bg-blue-500 flex items-center justify-center text-white font-semibold">T</div>
+        <div class="text-lg font-medium">Tailwind Intro</div>
+      </div>
+      <div class="space-x-4">
+        <a href="#" class="text-sm hover:text-blue-500">Home</a>
+        <a href="#components" class="text-sm hover:text-blue-500">Components</a>
+        <a href="#practice" class="text-sm hover:text-blue-500">Practice</a>
+      </div>
+    </div>
+  </nav>
 
-        <div class="bg-white rounded-2xl shadow-md p-8 mx-12 mt-12">
-            <h1 class="text-2xl font-bold">Build Interfaces Fast With Tailwind CSS</h1>
-            <p>Utility-fist classes lets you compose UI in HTML. Try modifying classes live. happy coding nalang</p>
-            
-            <div class="space-x-2">
-                <a href="#components" class="px-4 py-2 bg-blue-500 text-white rounded">Try components</a>
-                <a href="#practice" class="px-4 py-2 rounded border">Do practice tasks</a>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="px-12 mt-12">
-            <div class="flex justify-center">
-            <div class="rounded bg-white shadow-md">
-                <h1>User</h1>
-                <p>Name,role,quick actions</p>
-            <div> <button>Edit</button></div>
-        </div>
-        </div>
-        </section>
 
-        <section class="px-12 mt-12">
-            <div class="flex justify-center">
-            <div class="rounded bg-white shadow-md">
-                <h1>User</h1>
-                <p>Name,role,quick actions</p>
-            <div> <button>Edit</button></div>
-        </div>
-        </div>
-        </section>
+  <header class="max-w-4xl mx-auto px-4 py-12">
+    <div class="bg-white rounded-2xl shadow p-8">
+      <h1 class="text-2xl font-bold mb-2">Build interfaces fast with Tailwind CSS</h1>
+      <p class="text-gray-600 mb-6">Utility-first classes let you compose UI directly in HTML. Happy coding!</p>
 
-        <section class="px-12 mt-12">
-            <div class="flex justify-center">
-            <div class="rounded bg-white shadow-md">
-                <h1>User</h1>
-                <p>Name,role,quick actions</p>
-            <div> <button>Edit</button></div>
-        </div>
-        </div>
-        </section>
+      <div class="flex gap-3">
+        <a href="#components" class="inline-block px-4 py-2 rounded bg-blue-500 text-white">Try components</a>
+        <a href="#practice" class="inline-block px-4 py-2 rounded border">Do practice tasks</a>
+      </div>
+    </div>
+  </header>
 
-    </main>
-    <footer>
 
-    </footer>
+  <main id="components" class="max-w-4xl mx-auto px-4 space-y-6 pb-20">
+
+    <!-- Cards -->
+    <section class="flex flex-col gap-6" id="cards">
+      <h2 class="text-xl font-semibold mb-3">Card components</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
+          <h3 class="font-semibold">User</h3>
+          <p class="">Name, role, quick actions.</p>
+          <div class="inline-block text-sm font-medium px-2.5 py-0.5 rounded">
+            <button class="inline-block px-4 py-2">Edit</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
+          <h3 class="font-semibold">Stats</h3>
+          <p class="">Show counters or badges here.</p>
+          <div class="flex items-center gap-4">
+            <div class="font-bold text-2xl">42</div>
+            <div class="text-gray-500">active</div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
+          <h3 class="font-semibold">Notes</h3>
+          <p class="">Short multi-line content fits well.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- do the form -->
+    <section>
+      <div>
+        <h2 class="text-xl font-semibold mb-3" id="practice">Simple form</h2>
+        <form class="bg-white rounded-2xl shadow-md p-6 space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-medium mb-1">Name</label>
+            <input type="text" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium mb-1">Email</label>
+            <input type="email" class="w-full border border-gray-300 rounded px-3 py-2 " placeholder="Your email" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium mb-1">Message</label>
+            <textarea class="w-full border border-gray-300 rounded px-3 py-2" rows="4" placeholder="Your message"></textarea>
+          </div>
+          <div class="flex items-center justify-between">
+            <h2>Try changing to see effects.</h2>
+            <button type="submit" class="block px-4 py-2 rounded bg-blue-500 text-white">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- do the table -->
+     <section>
+      <div>
+        <h1>Table</h1>
+        <table class="min-w-full bg-white rounded-2xl shadow-md">
+          <thead>
+            <tr class="bg-gray-300">
+              <th class="py-2 px-4 border-b">Name</th>
+              <th class="py-2 px-4 border-b">Role</th>
+              <th class="py-2 px-4 border-b">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-100">
+              <td class="py-2 px-4 border-b">Alice</td>
+              <td class="py-2 px-4 border-b">Student</td>
+              <td class="py-2 px-4 border-b inline-block bg-green-100 text-green-700 text-sm font-medium px-2.5 py-0.5 rounded">Active</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="py-2 px-4 border-b">Franco</td>
+              <td class="py-2 px-4 border-b">Student</td>
+              <td class="py-2 px-4 border-b inline-block bg-red-100 text-red-700 text-sm font-medium px-2.5 py-0.5 rounded">Inactive</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="py-2 px-4 border-b">Tyra</td>
+              <td class="py-2 px-4 border-b">Student</td>
+              <td class="py-2 px-4 border-b inline-block bg-green-100 text-green-700 text-sm font-medium px-2.5 py-0.5 rounded">Active</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="py-2 px-4 border-b">Maeve</td>
+              <td class="py-2 px-4 border-b">Student</td>
+              <td class="py-2 px-4 border-b inline-block bg-red-100 text-red-700 text-sm font-medium px-2.5 py-0.5 rounded">Inactive</td>
+            </tr>
+            <tr class="hover:bg-gray-100">
+              <td class="py-2 px-4 border-b">Kinessa</td>
+              <td class="py-2 px-4 border-b">Instructor</td>
+              <td class="py-2 px-4 border-b inline-block bg-green-100 text-green-700 text-sm font-medium px-2.5 py-0.5 rounded">Active</td>
+            </tr>
+            <tr class="hover:bg-gray-600">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+
 </body>
 </html>
