@@ -10,20 +10,49 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- NAVBAR -->
-  <nav class="bg-white shadow-sm">
-    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-md bg-blue-500 flex items-center justify-center text-white font-semibold">T</div>
-        <div class="text-lg font-medium">Tailwind Intro</div>
+<!-- NAVBAR -->
+<nav class="bg-white shadow-sm">
+  <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-md bg-blue-500 flex items-center justify-center text-white font-semibold">
+        T
       </div>
-      <div class="space-x-4">
+      <div class="text-lg font-medium">Tailwind Intro</div>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex gap-6 space-x-4">
+      <a href="#" class="text-sm hover:text-blue-500">Home</a>
+      <a href="#components" class="text-sm hover:text-blue-500">Components</a>
+      <a href="#practice" class="text-sm hover:text-blue-500">Practice</a>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="md:hidden relative">
+      <!-- hidden checkbox -->
+      <input type="checkbox" id="menu-toggle" class="peer hidden" />
+
+
+      <label for="menu-toggle" class="cursor-pointer">
+        <svg viewBox="0 0 100 80" width="30" height="30" fill="currentColor">
+          <rect width="100" height="15"></rect>
+          <rect y="30" width="100" height="15"></rect>
+          <rect y="60" width="100" height="15"></rect>
+        </svg>
+      </label>
+
+
+      <div class="hidden peer-checked:flex flex-col absolute right-0 mt-3 bg-white shadow-md rounded-md p-3 space-y-2 w-40">
         <a href="#" class="text-sm hover:text-blue-500">Home</a>
         <a href="#components" class="text-sm hover:text-blue-500">Components</a>
         <a href="#practice" class="text-sm hover:text-blue-500">Practice</a>
       </div>
     </div>
-  </nav>
+
+  </div>
+</nav>
+
 
 
   <header class="max-w-4xl mx-auto px-4 py-12">
@@ -41,33 +70,43 @@
 
   <main id="components" class="max-w-4xl mx-auto px-4 space-y-6 pb-20">
 
-    <!-- Cards -->
-    <section class="flex flex-col gap-6" id="cards">
-      <h2 class="text-xl font-semibold mb-3">Card components</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
-          <h3 class="font-semibold">User</h3>
-          <p class="">Name, role, quick actions.</p>
-          <div class="inline-block text-sm font-medium px-2.5 py-0.5 rounded">
-            <button class="inline-block px-4 py-2">Edit</button>
-          </div>
-        </div>
 
-        <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
-          <h3 class="font-semibold">Stats</h3>
-          <p class="">Show counters or badges here.</p>
-          <div class="flex items-center gap-4">
-            <div class="font-bold text-2xl">42</div>
-            <div class="text-gray-500">active</div>
-          </div>
-        </div>
+<section class="flex flex-col gap-6" id="cards">
+  <h2 class="text-xl font-semibold mb-3">Card components</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-        <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
-          <h3 class="font-semibold">Notes</h3>
-          <p class="">Short multi-line content fits well.</p>
-        </div>
+
+    <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col h-full">
+      <div class="flex-1">
+        <h3 class="font-semibold">User</h3>
+        <p>Name, role, quick actions.</p>
       </div>
-    </section>
+      <div class="flex justify-end mt-4">
+        <button class="px-3 py-1 text-sm rounded bg-blue-500 text-white hover:bg-blue-600">
+          Edit
+        </button>
+      </div>
+    </div>
+
+
+    <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
+      <h3 class="font-semibold">Stats</h3>
+      <p>Show counters or badges here.</p>
+      <div class="flex items-center gap-4">
+        <div class="font-bold text-2xl">42</div>
+        <div class="text-gray-500">active</div>
+      </div>
+    </div>
+
+
+    <div class="bg-white rounded-2xl shadow-md p-6 space-y-4">
+      <h3 class="font-semibold">Notes</h3>
+      <p>Short multi-line content fits well.</p>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- do the form -->
     <section>
@@ -94,44 +133,44 @@
     </section>
 
     <!-- do the table -->
-     <section>
+    <section>
       <div>
         <h1>Table</h1>
-        <table class="min-w-full bg-white rounded-2xl shadow-md">
+        <table class="min-w-full  rounded-2xl shadow-md">
           <thead>
-            <tr class="bg-gray-300">
+            <tr class="bg-gray-400 text-black">
               <th class="py-2 px-4 border-b">Name</th>
               <th class="py-2 px-4 border-b">Role</th>
               <th class="py-2 px-4 border-b">Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="">
             <tr class="hover:bg-gray-100">
               <td class="py-2 px-4 border-b">Alice</td>
               <td class="py-2 px-4 border-b">Student</td>
-              <td class="py-2 px-4 border-b inline-block bg-green-100 text-green-700 text-sm font-medium px-2.5 py-0.5 rounded">Active</td>
+              <td class="py-1 px-1 border-b inline-block bg-green-100 text-green-700 text-sm font-medium rounded">Active</td>
             </tr>
             <tr class="hover:bg-gray-100">
               <td class="py-2 px-4 border-b">Franco</td>
               <td class="py-2 px-4 border-b">Student</td>
-              <td class="py-2 px-4 border-b inline-block bg-red-100 text-red-700 text-sm font-medium px-2.5 py-0.5 rounded">Inactive</td>
+              <td class="py-1 px-1 border-b inline-block bg-red-100 text-red-700 text-sm font-medium rounded">Pending</td>
             </tr>
             <tr class="hover:bg-gray-100">
               <td class="py-2 px-4 border-b">Tyra</td>
               <td class="py-2 px-4 border-b">Student</td>
-              <td class="py-2 px-4 border-b inline-block bg-green-100 text-green-700 text-sm font-medium px-2.5 py-0.5 rounded">Active</td>
+              <td class="py-1 px-1 border-b inline-block bg-green-100 text-green-700 text-sm font-medium rounded">Active</td>
             </tr>
             <tr class="hover:bg-gray-100">
               <td class="py-2 px-4 border-b">Maeve</td>
               <td class="py-2 px-4 border-b">Student</td>
-              <td class="py-2 px-4 border-b inline-block bg-red-100 text-red-700 text-sm font-medium px-2.5 py-0.5 rounded">Inactive</td>
+              <td class="py-1 px-1 border-b inline-block bg-red-100 text-red-700 text-sm font-medium rounded">Pending</td>
             </tr>
             <tr class="hover:bg-gray-100">
-              <td class="py-2 px-4 border-b">Kinessa</td>
-              <td class="py-2 px-4 border-b">Instructor</td>
-              <td class="py-2 px-4 border-b inline-block bg-green-100 text-green-700 text-sm font-medium px-2.5 py-0.5 rounded">Active</td>
+              <td class="py-2 px-2 border-b">Kinessa</td>
+              <td class="py-2 px-2 border-b">Instructor</td>
+              <td class="py-1 px-1 border-b inline-block bg-green-100 text-green-900 text-sm font-medium rounded">Active</td>
             </tr>
-            <tr class="hover:bg-gray-600">
+            
           </tbody>
         </table>
       </div>
@@ -139,6 +178,6 @@
 
   </main>
 
-
+    
 </body>
 </html>
